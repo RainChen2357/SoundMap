@@ -45,3 +45,4 @@ html[data-theme=dark] .maplibregl-ctrl-attrib a{color:#eee!important}
 html[data-theme=dark] .sheet-close{background:rgba(58,58,60,.82)!important;color:#d6d6dc;border:1px solid rgba(255,255,255,.08);box-shadow:none}
 html[data-theme=dark] .save-action{background:rgba(58,58,60,.72);color:#e7e7ec;border:1px solid rgba(255,255,255,.07)}
 html[data-theme=dark] .save-action.saved{background:rgba(10,132,255,.18);color:#69aaff;border-color:rgba(10,132,255,.24)}
+html[data-theme=dark] .library-empty>span{background:#2c2c2e;color:#aeb0b8;border:1px solid rgba(255,255,255,.06)}
