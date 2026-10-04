@@ -42,3 +42,6 @@ html[data-theme=dark] .library-empty,html[data-theme=dark] .library-empty strong
 html[data-theme=dark] .maplibregl-ctrl-attrib{background:rgba(20,20,22,.76)!important;color:#ddd!important}
 html[data-theme=dark] .maplibregl-ctrl-attrib a{color:#eee!important}
 .cluster-marker{width:48px;height:48px;display:grid;place-items:center;border:3px solid rgba(255,255,255,.96);border-radius:50%;background:rgba(247,248,250,.94);color:#232429;box-shadow:0 4px 15px rgba(0,0,0,.2);font-size:14px;font-weight:650;letter-spacing:-.02em;transition:transform .18s,box-shadow .18s;backdrop-filter:blur(10px)}.cluster-marker:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.24)}html[data-theme=dark] .cluster-marker{background:rgba(31,32,36,.94);color:#f5f5f7;border-color:rgba(255,255,255,.9)}
+html[data-theme=dark] .sheet-close{background:rgba(58,58,60,.82)!important;color:#d6d6dc;border:1px solid rgba(255,255,255,.08);box-shadow:none}
+html[data-theme=dark] .save-action{background:rgba(58,58,60,.72);color:#e7e7ec;border:1px solid rgba(255,255,255,.07)}
+html[data-theme=dark] .save-action.saved{background:rgba(10,132,255,.18);color:#69aaff;border-color:rgba(10,132,255,.24)}
