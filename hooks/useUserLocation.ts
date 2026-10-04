@@ -1,0 +1,5 @@
+'use client';
+import { useCallback, useState } from 'react';
+import type { Coordinates } from '@/lib/geo';
+const SHANGHAI:Coordinates={latitude:31.2304,longitude:121.4737};
+export function useUserLocation(){const [location,setLocation]=useState<Coordinates|null>(SHANGHAI);const [accuracy,setAccuracy]=useState(25);const [error,setError]=useState<string|null>(null);const [loading,setLoading]=useState(false);const locate=useCallback(()=>{if(!navigator.geolocation){setError('Location is unavailable in this browser.');return}setLoading(true);navigator.geolocation.getCurrentPosition(p=>{setLocation({latitude:p.coords.latitude,longitude:p.coords.longitude});setAccuracy(p.coords.accuracy);setError(null);setLoading(false)},e=>{setError(e.code===1?'Location permission is off.':'Could not get your location.');setLoading(false)},{enableHighAccuracy:true,timeout:10000,maximumAge:30000})},[]);const setDemoLocation=useCallback((coords:Coordinates)=>{setLocation(coords);setAccuracy(25);setError(null)},[]);return{location,accuracy,error,loading,locate,setDemoLocation}}
