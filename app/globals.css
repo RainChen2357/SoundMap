@@ -46,3 +46,41 @@ html[data-theme=dark] .sheet-close{background:rgba(58,58,60,.82)!important;color
 html[data-theme=dark] .save-action{background:rgba(58,58,60,.72);color:#e7e7ec;border:1px solid rgba(255,255,255,.07)}
 html[data-theme=dark] .save-action.saved{background:rgba(10,132,255,.18);color:#69aaff;border-color:rgba(10,132,255,.24)}
 html[data-theme=dark] .library-empty>span{background:#2c2c2e;color:#aeb0b8;border:1px solid rgba(255,255,255,.06)}
+html[data-theme=dark] .play-button{background:#d1d1d6;color:#1d1d1f}
+html[data-theme=dark] .found-icon{background:#d1d1d6;color:#1d1d1f}
+.mini-player>.mini-bars{flex:0 0 36px;width:36px;height:36px;padding:0;border-radius:50%;display:grid;place-items:center}
+html[data-theme=dark] .mini-player>.mini-bars{background:#d1d1d6;color:#1d1d1f}
+.mini-player{width:min(380px,calc(100% - 32px));height:62px}
+.mini-player>span strong,.mini-player>span small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Compact, shared playback bar inspired by Apple Music's mini player. */
+.shared-audio{display:none}
+.mini-player,.library-now-playing{gap:8px;padding:7px 9px}
+.mini-player-main{display:flex;align-items:center;gap:10px;flex:1;min-width:0;height:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left}
+.mini-player-main>img{width:46px;height:46px;flex:none;object-fit:cover;border-radius:10px;box-shadow:0 2px 6px #0002}
+.mini-player-main>span{display:grid;gap:3px;min-width:0;flex:1}
+.mini-player-main strong,.mini-player-main small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini-player-main strong{font-size:13px;font-weight:600}
+.mini-player-main small{font-size:11px;color:var(--secondary)}
+.mini-play-toggle{width:38px;height:38px;flex:none;border:0;border-radius:50%;display:grid;place-items:center;background:#e7e7e9;color:#252529}
+html[data-theme=dark] .mini-play-toggle{background:#d1d1d6;color:#1d1d1f}
+.library-now-playing{z-index:10}
+@media(max-width:600px){.library-now-playing{left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom));width:min(380px,calc(100% - 32px))}}
+
+/* Keep map actions available while Library is open. */
+.library-page{pointer-events:none}
+.library-page>.library-header,.library-page>.library-tabs,.library-page>.library-list,.library-page>.library-now-playing{pointer-events:auto}
+.library-page>.library-list{pointer-events:none}
+.library-page .library-row,.library-page .library-empty{pointer-events:auto}
+.library-map-actions{position:fixed;z-index:12;right:max(24px,env(safe-area-inset-right));bottom:max(34px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:14px;pointer-events:auto}
+@media(max-width:600px){.library-map-actions{right:max(18px,env(safe-area-inset-right));bottom:max(28px,env(safe-area-inset-bottom));gap:12px}}
+
+/* Dark appearance refinements for the drop creation flow. */
+html[data-theme=dark] .map-place{background:rgba(36,37,40,.88);color:#f2f2f7;border:1px solid rgba(255,255,255,.14);box-shadow:0 4px 16px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
+html[data-theme=dark] .map-place small{color:#c3c3ca}
+html[data-theme=dark] .create-footer{background:rgba(28,28,30,.98);border-color:rgba(255,255,255,.1)}
+html[data-theme=dark] .primary-button{background:#d1d1d6;color:#1d1d1f}
+html[data-theme=dark] .primary-button:disabled{background:#48484a;color:#c3c3ca;opacity:1}
+html[data-theme=dark] .back-button{color:#e4e4e9}
+.map-actions .floating,.library-map-actions .floating{width:52px;height:52px}
+html[data-theme=dark] .map-instruction{background:rgba(36,37,40,.88);color:#f2f2f7;border:1px solid rgba(255,255,255,.14);box-shadow:0 4px 16px rgba(0,0,0,.28);backdrop-filter:blur(14px)}
