@@ -45,7 +45,7 @@ export default function EchoSection({ drop, onEcho }: { drop: MusicDrop; onEcho?
   return <>
     <section className="echo-section" aria-label="Echoes">
       <div className="echo-actions">
-        <button className={`drop-like ${liked ? 'liked' : ''}`} aria-pressed={liked} onClick={()=>void toggle()}><Heart size={17} fill={liked ? 'currentColor' : 'none'}/><span>Like</span>{likeCount > 0 && <b>{likeCount}</b>}</button>
+        <button className={`drop-like ${liked ? 'liked' : ''}`} aria-pressed={liked} onClick={()=>void toggle()}><Heart size={17} fill={liked ? 'currentColor' : 'none'}/><span>Resonate</span>{likeCount > 0 && <b>{likeCount}</b>}</button>
         <button className="leave-echo" onClick={openFlow}><Music2 size={16}/><span>Leave an Echo</span></button>
       </div>
       <div className="echo-list"><h3>Echoes <span>· {echoes.length}</span></h3>
