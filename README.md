@@ -1,6 +1,8 @@
 # SoundMap
 
-> 默认语言：中文 · [English](#english)
+> 中文 · [English](#english)
+
+**在线体验：** [soundmap-azure.vercel.app](https://soundmap-azure.vercel.app/)
 
 SoundMap 是一张由歌曲、地点和个人记忆组成的音乐地图。你可以在某个地方留下一首歌，发现别人留在附近的音乐，也可以沿着一条 Trail 步行聆听一组歌曲。
 
@@ -80,6 +82,8 @@ Supabase 的读取与 Drop 写入逻辑位于 `lib/drops.ts`。发现记录目�
 <a id="english"></a>
 
 # SoundMap (English)
+
+**Live demo:** [soundmap-azure.vercel.app](https://soundmap-azure.vercel.app/)
 
 SoundMap is a music map built from songs, places, and personal memories. Leave a song somewhere, discover music left nearby, or walk through a trail of songs tied to real locations.
 
