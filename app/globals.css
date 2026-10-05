@@ -128,3 +128,23 @@ html[data-theme=dark] .trail-marker{background:#2d2e32;color:#d0d2d8;border-colo
 .drop-like.liked{color:#087bfa;background:rgba(8,123,250,.1);border-color:rgba(8,123,250,.23)}
 html[data-theme=dark] .drop-sheet,html[data-theme=dark] .create-panel,html[data-theme=dark] .library-page,html[data-theme=dark] .echo-sheet,html[data-theme=dark] .trail-sheet,html[data-theme=dark] .create-choice-sheet,html[data-theme=dark] .location-prompt,html[data-theme=dark] .search-results{background:rgba(28,28,30,.97)}
 html[data-theme=dark] .drop-like.liked{color:#65aaff;background:rgba(10,132,255,.18);border-color:rgba(10,132,255,.3)}
+
+/* Hidden Treasures reveal a soft search area before revealing their song. */
+.map-marker.is-treasure{position:relative;width:88px;height:88px;border:0;padding:0;overflow:visible;background:transparent;box-shadow:none;color:#4f647b;backdrop-filter:none}.treasure-hidden-content{position:absolute;inset:0;display:block}
+.map-marker.is-treasure:hover,.map-marker.is-treasure.is-active{transform:scale(1.035);box-shadow:none}
+.treasure-haze{position:absolute;inset:0;border:1px solid rgba(255,255,255,.58);border-radius:50%;background:radial-gradient(circle,rgba(226,237,249,.48) 0%,rgba(201,220,241,.3) 52%,rgba(201,220,241,.04) 76%,transparent 78%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 5px 24px rgba(48,84,124,.1)}
+.treasure-symbol{position:absolute;left:50%;top:50%;width:30px;height:30px;transform:translate(-50%,-50%);display:grid;place-items:center;border:1px solid rgba(255,255,255,.75);border-radius:50%;background:rgba(255,255,255,.78);color:#55718f;font-size:17px;font-weight:500;box-shadow:0 2px 9px rgba(45,73,102,.13)}
+.treasure-sheet-copy{padding-top:12px;min-height:220px}
+.treasure-sheet-copy h1{margin:7px 0 5px;font-size:28px;letter-spacing:-.045em}
+.treasure-sheet-copy>p{margin:0;color:var(--secondary);font-size:14px}
+.treasure-clue{margin-top:25px;padding:15px 16px;border:1px solid var(--line);border-radius:17px;background:rgba(130,145,165,.06)}
+.treasure-clue>span{font-size:9px;letter-spacing:.13em;color:var(--secondary);font-weight:700}
+.treasure-clue blockquote{margin:8px 0 0;font-size:15px;line-height:1.5;color:var(--ink)}
+.treasure-status{display:flex;align-items:center;gap:8px;margin-top:17px;color:#4275a9;font-size:13px;font-weight:600}
+.treasure-status-dot{width:7px;height:7px;border-radius:50%;background:#3689dd;box-shadow:0 0 0 4px rgba(54,137,221,.1)}
+.clue-input{height:112px!important;white-space:pre-wrap}
+.treasure-create-note{padding-top:14px;color:var(--secondary);font-size:11px}
+html[data-theme=dark] .treasure-haze{border-color:rgba(220,232,247,.22);background:radial-gradient(circle,rgba(100,128,162,.3) 0%,rgba(81,113,151,.2) 53%,rgba(81,113,151,.03) 76%,transparent 78%)}
+html[data-theme=dark] .treasure-symbol{border-color:rgba(255,255,255,.2);background:rgba(40,43,49,.86);color:#b9cce1}
+html[data-theme=dark] .treasure-clue{background:rgba(255,255,255,.04)}
+@media(prefers-reduced-motion:reduce){.map-marker.is-treasure{transition:none}}
