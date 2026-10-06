@@ -147,4 +147,11 @@ html[data-theme=dark] .drop-like.liked{color:#65aaff;background:rgba(10,132,255,
 html[data-theme=dark] .treasure-haze{border-color:rgba(220,232,247,.22);background:radial-gradient(circle,rgba(100,128,162,.3) 0%,rgba(81,113,151,.2) 53%,rgba(81,113,151,.03) 76%,transparent 78%)}
 html[data-theme=dark] .treasure-symbol{border-color:rgba(255,255,255,.2);background:rgba(40,43,49,.86);color:#b9cce1}
 html[data-theme=dark] .treasure-clue{background:rgba(255,255,255,.04)}
+.treasure-demo-unlock{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin-top:20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.62);color:var(--secondary);font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.treasure-demo-unlock:hover{background:rgba(10,132,255,.08);border-color:rgba(10,132,255,.24);color:#087bfa}
+html[data-theme=dark] .treasure-demo-unlock{background:rgba(255,255,255,.06);color:#c5c5ca}
+html[data-theme=dark] .treasure-demo-unlock:hover{background:rgba(10,132,255,.16);border-color:rgba(10,132,255,.3);color:#65aaff}
+.trail-marker.completed.has-cover{width:42px;height:42px;padding:0;overflow:hidden;border:2px solid rgba(255,255,255,.96);background:transparent;box-shadow:0 3px 12px rgba(0,0,0,.28)}
+.trail-marker.completed.has-cover img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+html[data-theme=dark] .trail-marker.completed.has-cover{border-color:rgba(255,255,255,.86);background:transparent}
 @media(prefers-reduced-motion:reduce){.map-marker.is-treasure{transition:none}}

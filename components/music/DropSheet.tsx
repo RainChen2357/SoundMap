@@ -1,13 +1,14 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Bookmark, Check, MapPin, X } from 'lucide-react';
+import { Bookmark, Check, Eye, MapPin, X } from 'lucide-react';
 import type { MusicDrop } from '@/types/drop';
 import AudioPlayer from './AudioPlayer';
 import EchoSection from './EchoSection';
 
-export default function DropSheet({active,unlocked,distance,status,saved,playing,isAudioPlaying,audioProgress,audioDuration,onClose,onDemoArrive,onToggleAudio,onSeek,onToggleSave,onEcho}: {
-  active: MusicDrop|null; unlocked: boolean; distance: number; status: string; saved: string[]; playing: MusicDrop|null;
+export default function DropSheet({active,unlocked,demoPreview=false,demoMode=false,distance,status,saved,playing,isAudioPlaying,audioProgress,audioDuration,onClose,onDemoArrive,onDemoUnlock,onToggleAudio,onSeek,onToggleSave,onEcho}: {
+  active: MusicDrop|null; unlocked: boolean; demoPreview?: boolean; demoMode?: boolean; distance: number; status: string; saved: string[]; playing: MusicDrop|null;
   isAudioPlaying: boolean; audioProgress: number; audioDuration: number; onClose:()=>void; onDemoArrive:(drop:MusicDrop)=>void;
+  onDemoUnlock:(drop:MusicDrop)=>void;
   onToggleAudio:(drop:MusicDrop)=>void; onSeek:(seconds:number)=>void; onToggleSave:(drop:MusicDrop)=>void; onEcho:()=>void;
 }) {
   return <AnimatePresence>{active&&<motion.section className="drop-sheet glass" initial={{x:'-50%',y:'100%',opacity:0}} animate={{x:'-50%',y:0,opacity:1}} exit={{x:'-50%',y:'100%',opacity:0}} transition={{type:'spring',damping:28,stiffness:260}}>
@@ -16,13 +17,14 @@ export default function DropSheet({active,unlocked,distance,status,saved,playing
       <span className="eyebrow">HIDDEN TREASURE</span><h1>Hidden Song</h1><p>Someone left something nearby.</p>
       {active.clue&&<div className="treasure-clue"><span>CLUE</span><blockquote>“{active.clue}”</blockquote></div>}
       <div className="treasure-status"><span className="treasure-status-dot"/><span>{status}</span></div>
+      {demoMode&&<button className="treasure-demo-unlock" onClick={()=>onDemoUnlock(active)}><Eye size={15}/>Preview unlocked song</button>}
     </div>:<div className="drop-content">
       <div className="drop-heading">
         <motion.div className="album-frame" initial={active.visibility==='hidden'?{opacity:0,scale:.97}:false} animate={{opacity:1,scale:1}} transition={{duration:.4,ease:'easeOut'}}><img src={active.song.coverUrl} alt="Album artwork"/></motion.div>
         <div><div className="eyebrow">{active.visibility==='hidden'?'HIDDEN SONG':'LEFT HERE'}</div><h1>{active.song.title}</h1><p>{active.song.artist}</p></div>
       </div>
       {active.visibility==='public'&&<div className="drop-meta"><span><MapPin size={15}/>{active.placeName}</span><span>{Math.round(distance)} m away</span></div>}
-      {unlocked?<><div className="found-label"><span className="found-icon"><Check size={17}/></span>You found it.</div>
+      {unlocked?<><div className="found-label"><span className="found-icon"><Check size={17}/></span>{demoPreview?'Demo preview':'You found it.'}</div>
         <AudioPlayer song={active.song} isPlaying={playing?.song.id===active.song.id&&isAudioPlaying} progress={playing?.song.id===active.song.id?audioProgress:0} duration={playing?.song.id===active.song.id?audioDuration:0} onToggle={()=>onToggleAudio(active)} onSeek={onSeek}/>
         {active.note&&<blockquote>“{active.note}”</blockquote>}
         <EchoSection drop={active} onEcho={onEcho}/>
